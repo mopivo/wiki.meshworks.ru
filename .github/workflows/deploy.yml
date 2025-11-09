@@ -67,9 +67,6 @@ jobs:
             echo "  StrictHostKeyChecking yes"
           } >> ~/.ssh/config
 
-      - name: Reset remote ownership
-        run: ssh wiki-prod "sudo chown -R wiki-ci:wiki-ci /opt/compose/external/wiki && sudo find /opt/compose/external/wiki -type d -exec chmod 775 {} +"
-
       - name: Sync sources to server
         run: |
           rsync -az --delete \
