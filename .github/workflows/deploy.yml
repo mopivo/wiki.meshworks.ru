@@ -7,6 +7,10 @@ on:
         description: Git ref to deploy
         default: main
         required: true
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
 env:
   REMOTE_APP_DIR: /opt/compose/external/wiki/app
@@ -14,12 +18,18 @@ env:
 
 jobs:
   deploy:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || inputs.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -56,6 +66,9 @@ jobs:
             echo "  IdentityFile ~/.ssh/id_rsa"
             echo "  StrictHostKeyChecking yes"
           } >> ~/.ssh/config
+
+      - name: Reset remote ownership
+        run: ssh wiki-prod "sudo chown -R wiki-ci:wiki-ci /opt/compose/external/wiki && sudo find /opt/compose/external/wiki -type d -exec chmod 775 {} +"
 
       - name: Sync sources to server
         run: |
