@@ -1,4 +1,4 @@
-name: "🐞 Wiki bug report"
+name: "🐞 Баг"
 description: Сообщить об ошибке на существующей странице
 labels: [bug]
 body:
