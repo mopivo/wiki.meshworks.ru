@@ -4,7 +4,7 @@ sidebar_label: Платы
 sidebar_position: 3
 breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройства", "Самодельные ноды", "Платы"]
 ---
-![](/img/wiki/logo-statiyu-gorod-node-c337c8b0.png)
+![](/img/wiki/diy-boards-hero.png)
 
 В этом разделе собраны **DIY-проекты и Gerber-платы** — это готовые макеты для самостоятельного изготовления и сборки нод Meshtastic
 

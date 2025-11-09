@@ -5,7 +5,7 @@ sidebar_label: Meshtastic устройства
 sidebar_position: 2
 breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройства"]
 ---
-![](/img/wiki/les-e67e2c7c.png)
+![](/img/wiki/devices-overview.png)
 
 ## **Готовые и DIY-ноды Meshtastic — в чём разница**
 

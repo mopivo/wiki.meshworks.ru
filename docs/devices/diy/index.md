@@ -5,7 +5,7 @@ sidebar_label: Самодельные ноды
 sidebar_position: 2
 breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройства", "Самодельные ноды"]
 ---
-![](/img/wiki/les-7553c722.png)
+![](/img/wiki/diy-overview.png)
 
 В этом разделе мы с вами поговорим о том какие у вас есть варианты для самостоятельной сборки ноды для Meshtastic 
 

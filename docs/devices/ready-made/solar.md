@@ -16,7 +16,7 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
 
 :::
 
- ![](/img/wiki/les-da6c6638.png)
+ ![](/img/wiki/d5-mini-solar-kit.png)
 
 # D5 Mini Solar Kit (Heltec V3)
 
@@ -49,7 +49,7 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
 
 ## 
 
- ![](/img/wiki/les-d653e718.png)
+ ![](/img/wiki/sensecap-solar-node.png)
 
 ## **SenseCAP Solar Node**
 
