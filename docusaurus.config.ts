@@ -92,6 +92,12 @@ const config: Config = {
           activeBaseRegex: '^(?!/about).*$',
         },
         {
+          to: '/wiki/how-to-edit',
+          position: 'left',
+          label: 'Контрибьютинг',
+          activeBaseRegex: '^/wiki/(how-to-edit|example).*$',
+        },
+        {
           to: '/about',
           position: 'left',
           label: 'О нас',
