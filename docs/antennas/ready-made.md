@@ -22,7 +22,7 @@ breadcrumbs: ["База знаний Meshtastic", "Антенны", "Готов�
 Стоимость: \~300p
 
 Купить:
-- [Aliexpress](https://ali.click/xxzdo8?erid=2SDnjerMySo)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/4000549095528.html?sku_id=10000002849186008)
 
 :::
 
@@ -43,7 +43,7 @@ breadcrumbs: ["База знаний Meshtastic", "Антенны", "Готов�
 Стоимость: \~200p
 
 Купить:
-- [Aliexpress](https://ali.click/nyzdo3?erid=2SDnjeymurX)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005007580150965.html?sku_id=12000041377829285)
 
 :::
 
@@ -58,7 +58,7 @@ breadcrumbs: ["База знаний Meshtastic", "Антенны", "Готов�
 Стоимость: \~1100p
 
 Купить:
-- [Aliexpress](https://ali.click/bzzdoh?erid=2SDnjf4DshZ)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005006028401984.html?sku_id=12000035390748674)
 
 :::
 
@@ -74,7 +74,7 @@ breadcrumbs: ["База знаний Meshtastic", "Антенны", "Готов�
 Стоимость: \~2100p
 
 Купить:
-- [Aliexpress](https://ali.click/uzzdo5?erid=2SDnjbtPkEj)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005006323306674.html?sku_id=12000036761218281)
 
 :::
 
@@ -95,7 +95,7 @@ Pекомендованы в официальных гайдлайнах меш�
 Стоимость: \~800p
 
 Купить:
-- [Aliexpress](https://alli.pub/7ar2d5)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://pl.aliexpress.com/item/1005004607615001.html)
 
 :::
 
