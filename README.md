@@ -29,12 +29,7 @@ npm start        # dev-сервер на http://localhost:3000/
 | `npm run clear`    | удаляет кеш Docusaurus (`.docusaurus/`) |
 
 ## Как контрибьютить
-1. Нажмите кнопку **Edit this page** на странице wiki или отредактируйте нужный файл прямо в GitHub → создайте Pull Request.
-2. Для локальной разработки создайте ветку, выполните `npm ci`, затем `npm start`.
-3. Перед отправкой PR убедитесь, что `npm run check` проходит без ошибок.
-4. Соблюдайте требования к front matter (минимум `title`, `slug`, `sidebar_label`, `sidebar_position`) и храните изображения в `static/img/` (подкаталог по смыслу, например `static/img/wiki/<slug>.png`).
-
-Подробные правила, чеклист и FAQ — в [CONTRIBUTING.md](CONTRIBUTING.md).
+Весь процесс описан в [CONTRIBUTING.md](CONTRIBUTING.md) и на странице `/wiki/how-to-edit`. Там же есть ссылка на песочницу `/wiki/example`, где можно взять готовые блоки.
 
 ## CI и деплой
 - `.github/workflows/ci.yml` прогоняет `npm run check` на каждом Pull Request и push в `main`.
