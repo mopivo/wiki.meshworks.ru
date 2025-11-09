@@ -24,6 +24,7 @@ npm start        # dev-сервер на http://localhost:3000/
 | `npm run build`    | production-сборка в `build/`           |
 | `npm run serve`    | локальный просмотр собранного билда    |
 | `npm run lint`     | `tsc --noEmit`, проверка TypeScript    |
+| `npm run lint:mdx` | Проверка Markdown/MDX через ESLint     |
 | `npm run check`    | `lint` + `build`, используется в CI    |
 | `npm run clear`    | удаляет кеш Docusaurus (`.docusaurus/`) |
 
