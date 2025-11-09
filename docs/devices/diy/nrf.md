@@ -34,7 +34,7 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
 Стоимость: \~3.300p
 
 Купить:
-- [Aliexpress](https://ali.click/8szdoc?erid=2SDnjeKEEXZ)
+- [Aliexpress]()
 
 :::
 
@@ -59,7 +59,7 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
   Стоимость: \~2.200p
 
 Купить:
-- [Aliexpress](https://ali.click/7tzdoa?erid=2SDnjeU8ADd)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005009187736693.html?af=1954_179299&sku_id=12000050903276930)
 
   :::
 
@@ -83,7 +83,7 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
   Стоимость: \~3.900p
 
 Купить:
-- [Aliexpress](https://ali.click/1uzdoi?erid=2SDnjea47M1)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005009761846970.html?af=1954_179299&sku_id=12000050080989087)
 
   :::
 
@@ -104,6 +104,6 @@ breadcrumbs: ["База знаний Meshtastic", "Meshtastic устройств
 Стоимость: \~1.500р
 
 Купить:
-- [Aliexpress](https://ali.click/ivzdo2?erid=2SDnjeix335)
+- [Aliexpress](https://trk.ppdu.ru/click/i33IoX8q?erid=2SDnjcM2X3K&tl=https://aliexpress.ru/item/1005007747207784.html?af=1954_179299&sku_id=12000042077885822)
 
 :::
