@@ -56,6 +56,11 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.7,
+          filename: 'sitemap.xml',
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -75,6 +80,49 @@ const config: Config = {
       {
         trackingID: 'G-4M85P2LD5J',
         anonymizeIP: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1600,
+        min: 400,
+        steps: 4,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'extra-pages',
+        path: 'static-pages',
+        routeBasePath: '/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: process.env.NODE_ENV === 'development',
+        offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo-light.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#7eb81b',
+          },
+        ],
       },
     ],
   ],

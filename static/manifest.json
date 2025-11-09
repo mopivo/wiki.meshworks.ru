@@ -1,0 +1,20 @@
+{
+  "name": "MeshWorks Wiki",
+  "short_name": "MeshWorks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#7eb81b",
+  "icons": [
+    {
+      "src": "/img/logo-light.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/img/logo-dark.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
