@@ -34,5 +34,3 @@ npm start        # dev-сервер на http://localhost:3000/
 ## CI и деплой
 - `.github/workflows/ci.yml` гоняет `npm run check` на каждом Pull Request и push в `main`.
 - `.github/workflows/deploy.yml` скачивает артефакт CI и заливает готовый `build/` на прод (авто после зелёного CI или по ручному запуску через Actions).
-
-Рекомендации по контенту и процессам — в `docs/wiki/wiki-docusaurus.md`.
