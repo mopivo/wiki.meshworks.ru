@@ -36,15 +36,18 @@ jobs:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || inputs.ref }}
 
       - name: Download build artifact
+        id: download_artifact
         if: github.event_name == 'workflow_run'
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           name: wiki-build
           run-id: ${{ github.event.workflow_run.id }}
           path: build-artifact
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prepare build folder from artifact
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && steps.download_artifact.outcome == 'success'
         run: |
           rm -rf build
           if [ ! -d build-artifact ]; then
@@ -58,19 +61,23 @@ jobs:
             mv build-artifact build
           fi
 
+      - name: Artifact missing warning
+        if: github.event_name == 'workflow_run' && steps.download_artifact.outcome != 'success'
+        run: echo "wiki-build artifact not found, falling back to local build."
+
       - name: Setup Node.js
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' || steps.download_artifact.outcome != 'success'
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install deps
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' || steps.download_artifact.outcome != 'success'
         run: npm ci
 
       - name: Build locally (sanity)
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' || steps.download_artifact.outcome != 'success'
         run: npm run check
 
       - name: Prepare SSH
