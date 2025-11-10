@@ -49,7 +49,12 @@ const config: Config = {
   baseUrl: '/',
   organizationName: 'meshworks',
   projectName: 'wiki',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   i18n: {
     defaultLocale: 'ru',
     locales: ['ru'],
