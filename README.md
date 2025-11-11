@@ -30,9 +30,3 @@ npm start        # dev-сервер на http://localhost:3000/
 ## CI и деплой
 - `.github/workflows/ci.yml` гоняет `npm run check` на каждом Pull Request и push в `main`.
 - `.github/workflows/deploy.yml` после каждого push в `main` (и при ручном запуске `workflow_dispatch`) собирает проект на runner’е и синхронизирует `/opt/compose/external/wiki/app`.
-
-## Лицензия
-- Весь контент MeshWorks Wiki распространяется под [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE).
-- Для удобства доступно краткое описание на русском — [LICENSE.ru.md](LICENSE.ru.md) (приоритет за оригинальным английским текстом).
-- Лицензия распространяется на весь исторический контент репозитория. Отправляя вклад, вы подтверждаете согласие на публикацию под CC BY-SA 4.0.
-- Если считаете, что материалы нарушают чьи-то права, напишите на `contact@meshworks.ru`.
