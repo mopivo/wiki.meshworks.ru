@@ -2,6 +2,26 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// Node.js ≥20 exposes `globalThis.localStorage` as an experimental getter that
+// throws unless the `--localstorage-file` flag is provided. During the static
+// build we don't need real localStorage, but referencing the getter (for
+// example, inside inline scripts) crashes the build. Remove it proactively so
+// SSR doesn't hit the SecurityError while the browser runtime remains
+// unaffected.
+if (typeof globalThis !== 'undefined' && 'localStorage' in globalThis) {
+  try {
+    // @ts-expect-error - delete works in Node, we only run this on the server.
+    delete globalThis.localStorage;
+  } catch {
+    try {
+      // @ts-expect-error - fallback assignment if delete fails.
+      globalThis.localStorage = undefined;
+    } catch {
+      /* noop */
+    }
+  }
+}
+
 const config: Config = {
   title: 'MeshWorks Wiki',
   tagline: 'База знаний MeshWorks',
