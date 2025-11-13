@@ -2,6 +2,27 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// Node.js ≥20 exposes `globalThis.localStorage` as an experimental getter that
+// throws unless the `--localstorage-file` flag is provided. During the static
+// build we don't need real localStorage, but referencing the getter (for
+// example, inside inline scripts) crashes the build. Remove it proactively so
+// SSR doesn't hit the SecurityError while the browser runtime remains
+// unaffected.
+if (typeof globalThis !== 'undefined' && 'localStorage' in globalThis) {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  if (descriptor && (descriptor.get || descriptor.set)) {
+    try {
+      Object.defineProperty(globalThis, 'localStorage', {
+        value: undefined,
+        writable: true,
+        configurable: true,
+      });
+    } catch {
+      /* noop */
+    }
+  }
+}
+
 const config: Config = {
   title: 'MeshWorks Wiki',
   tagline: 'База знаний MeshWorks',
@@ -41,12 +62,54 @@ const config: Config = {
         ],
       }),
     },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'noscript',
+      attributes: {},
+      innerHTML:
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"/>',
+    },
+    {
+      tagName: 'noscript',
+      attributes: {},
+      innerHTML:
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"/>',
+    },
   ],
   future: {
     v4: true,
   },
   url: 'https://wiki.meshworks.ru',
   baseUrl: '/',
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
+      rel: 'preload',
+      as: 'style',
+      onload: "this.onload=null;this.rel='stylesheet'",
+    },
+    {
+      href:
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap',
+      rel: 'preload',
+      as: 'style',
+      onload: "this.onload=null;this.rel='stylesheet'",
+    },
+  ],
   organizationName: 'meshworks',
   projectName: 'wiki',
   onBrokenLinks: 'throw',
