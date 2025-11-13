@@ -9,13 +9,14 @@ import type * as Preset from '@docusaurus/preset-classic';
 // SSR doesn't hit the SecurityError while the browser runtime remains
 // unaffected.
 if (typeof globalThis !== 'undefined' && 'localStorage' in globalThis) {
-  try {
-    // @ts-expect-error - delete works in Node, we only run this on the server.
-    delete globalThis.localStorage;
-  } catch {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  if (descriptor && (descriptor.get || descriptor.set)) {
     try {
-      // @ts-expect-error - fallback assignment if delete fails.
-      globalThis.localStorage = undefined;
+      Object.defineProperty(globalThis, 'localStorage', {
+        value: undefined,
+        writable: true,
+        configurable: true,
+      });
     } catch {
       /* noop */
     }
