@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from '@docusaurus/Head';
 import OriginalIdealImage from '@theme-original/IdealImage';
 import type {ComponentProps} from 'react';
 
@@ -61,7 +60,6 @@ export default function IdealImage(props: IdealImageProps): React.ReactElement {
       />
     );
   }
-
   const fallbackSrc =
     processed.src ?? (typeof img === 'string' ? img : undefined);
   if (!fallbackSrc) {
@@ -82,42 +80,20 @@ export default function IdealImage(props: IdealImageProps): React.ReactElement {
   const height = processed.height;
 
   return (
-    <>
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href={fallbackSrc}
-          fetchPriority="high"
-          imageSizes={resolvedSizes}
-          {...(processed.srcSet ? {imageSrcSet: processed.srcSet} : {})}
-        />
-        {webpSrc ? (
-          <link
-            rel="preload"
-            as="image"
-            href={webpSrc}
-            type="image/webp"
-            fetchPriority="high"
-            imageSizes={resolvedSizes}
-          />
-        ) : null}
-      </Head>
-      <picture className={className} style={style}>
-        {webpSrc ? <source srcSet={webpSrc} type="image/webp" /> : null}
-        {processed.srcSet ? <source srcSet={processed.srcSet} /> : null}
-        <img
-          src={fallbackSrc}
-          alt={alt}
-          width={width}
-          height={height}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          sizes={resolvedSizes}
-          {...rest}
-        />
-      </picture>
-    </>
+    <picture className={className} style={style}>
+      {webpSrc ? <source srcSet={webpSrc} type="image/webp" /> : null}
+      {processed.srcSet ? <source srcSet={processed.srcSet} /> : null}
+      <img
+        src={fallbackSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        sizes={resolvedSizes}
+        {...rest}
+      />
+    </picture>
   );
 }
